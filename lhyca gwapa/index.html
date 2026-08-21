@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e0f2fe;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            width: 420px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1e293b;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .option-a {
+            background: #38bdf8;
+            color: white;
+        }
+
+        .option-a:hover {
+            background: #0284c7;
+            transform: scale(1.05);
+        }
+
+        .option-b {
+            background: #f472b6;
+            color: white;
+        }
+
+        .option-b:hover {
+            background: #db2777;
+            transform: scale(1.05);
+        }
+
+        .option-c {
+            background: #a78bfa;
+            color: white;
+        }
+
+        .option-c:hover {
+            background: #7c3aed;
+            transform: scale(1.05);
+        }
+
+        /* Answer box */
+        .answer-box {
+            display: none;
+        }
+
+        .answer-box h1 {
+            margin-bottom: 15px;
+        }
+
+        .answer-box p {
+            color: #475569;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            margin-top: 25px;
+            background: #38bdf8;
+            color: white;
+        }
+
+        .back-button:hover {
+            background: #0284c7;
+            transform: scale(1.05);
+        }
+
+        .emoji {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MAIN QUESTION -->
+    <div class="container" id="questionBox">
+
+        <h1>Nganong gikapoy man? </h1>
+
+        <div class="options">
+
+            <button class="option-a" onclick="showAnswer('a')">
+                A.Gikapoy sa kinabuhi
+            </button>
+
+            <button class="option-b" onclick="showAnswer('b')">
+                B. Gikapoy sa Coding
+            </button>
+
+            <button class="option-c" onclick="showAnswer('c')">
+                C. Both
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ANSWER BOX -->
+    <div class="container answer-box" id="answerBox">
+
+        <div class="emoji" id="emoji"></div>
+
+        <h1 id="answerTitle"></h1>
+
+        <p id="answerMessage"></p>
+
+        <button class="back-button" onclick="goBack()">
+            Back 
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function showAnswer(answer) {
+
+            document.getElementById("questionBox").style.display = "none";
+
+            document.getElementById("answerBox").style.display = "block";
+
+
+            if (answer === "a") {
+
+                document.getElementById("emoji").textContent = "";
+
+                document.getElementById("answerTitle").textContent =
+                    "";
+
+                document.getElementById("answerMessage").textContent =
+                    "Pahuway sa gamay uy. Kaya ra na nimo. 🫂";
+
+            }
+
+
+            else if (answer === "b") {
+
+                document.getElementById("emoji").textContent = "";
+
+                document.getElementById("answerTitle").textContent =
+                    "";
+
+                document.getElementById("answerMessage").textContent =
+                    "HAHAHA pahuway sa coding kay basin pati ang code gikapoy na pud. 😂";
+
+            }
+
+
+            else if (answer === "c") {
+
+                document.getElementById("emoji").textContent = "";
+
+                document.getElementById("answerTitle").textContent =
+                    "Both diay! awh double kill! HAHAH";
+
+               
+
+            }
+
+        }
+
+
+        function goBack() {
+
+            document.getElementById("answerBox").style.display = "none";
+
+            document.getElementById("questionBox").style.display = "block";
+
+        }
+
+    </script>
+
+</body>
+</html>
